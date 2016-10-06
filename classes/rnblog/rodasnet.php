@@ -101,6 +101,7 @@ class Rnblog_Rodasnet extends Rnblog_Driver
 
     public function showFeaturedArticle()
     {
+        // TODO Add Featured post model.
         // TODO Find post that matches month and day
         // SELECT * FROM `users` WHERE `email` LIKE "%@example.com" LIMIT 5 OFFSET 10
 //        $users = Model_User::find_by('email', '%@example.com', 'like', 5, 10);
