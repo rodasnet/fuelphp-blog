@@ -44,7 +44,7 @@ class Blog
 
 		$config = \Arr::merge(static::$_defaults, \Config::get('blog', array()), $config);
 
-		$class = '\\Rodasnet\\Blog\\' . ucfirst(strtolower($config['driver']));
+		$class = '\Rodasnet\\Blog\\' . ucfirst(strtolower($config['driver']));
 
 		if( ! class_exists($class, true))
 		{
