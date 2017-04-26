@@ -14,8 +14,7 @@ class Rnblog_Rodasnet extends Rnblog_Driver
      * Driver specific functions
      *
      * /
-     *
-     *
+
      * /**
      * @param Pagination $pagination
      * @return array
