@@ -1,8 +1,8 @@
 <?php
 
-namespace Rnblog\Model;
+namespace Rodasnet\Blog\Model;
 
-class Post extends \Orm\Model_Soft
+class Post extends Orm\Model_Soft
 {
     public static function _init()
     {
@@ -88,14 +88,14 @@ class Post extends \Orm\Model_Soft
     protected static $_belongs_to = array(
         'category' => array(
             'key_from' => 'category_id',
-            'model_to' => '\Rnblog\Model\Category',
+            'model_to' => '\Rodasnet\Blog\Model\Category',
             'key_to' => 'id',
             'cascade_save' => false,
             'cascade_delete' => false,
         ),
         'author' => array(
             'key_from' => 'user_id',
-            'model_to' => '\Rnblog\Model\Author',
+            'model_to' => '\Rodasnet\Blog\Model\Author',
             'key_to' => 'id',
             'cascade_save' => false,
             'cascade_delete' => false,
@@ -111,7 +111,7 @@ class Post extends \Orm\Model_Soft
     protected static $_has_many = array(
         'comments' => array(
             'key_from' => 'id',
-            'model_to' => '\Rnblog\Model\Comment',
+            'model_to' => '\Rodasnet\Blog\Model\Comment',
             'key_to' => 'post_id',
             'cascade_save' => false,
             'cascade_delete' => true,  // We delete all comments from the post deleted

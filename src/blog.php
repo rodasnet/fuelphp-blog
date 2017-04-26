@@ -1,10 +1,10 @@
 <?php
 
-namespace Rnblog;
+namespace Rodasnet\Blog;
 
-class RnblogException extends \FuelException {}
+class BlogException extends \FuelException {}
 
-class Rnblog
+class Blog
 {
 	/**
 	 * loaded instance
@@ -27,7 +27,7 @@ class Rnblog
 	 */
 	public static function _init()
 	{
-		\Config::load('rnblog', true);
+	    \Config::load('blog', true);
 	}
 
 	/**
@@ -42,9 +42,9 @@ class Rnblog
 
 		is_array($config) or $config = array('driver' => $config);
 
-		$config = \Arr::merge(static::$_defaults, \Config::get('rnblog', array()), $config);
+		$config = \Arr::merge(static::$_defaults, \Config::get('blog', array()), $config);
 
-		$class = '\Rnblog\Rnblog_' . ucfirst(strtolower($config['driver']));
+		$class = '\\Rodasnet\\Blog\\' . ucfirst(strtolower($config['driver']));
 
 		if( ! class_exists($class, true))
 		{

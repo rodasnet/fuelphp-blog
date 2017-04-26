@@ -1,8 +1,8 @@
 <?php
 
-namespace Rnblog\Model\Author;
+namespace Rodasnet\Blog\Model\Author;
 
-class Metadata extends \Orm\Model
+class Metadata extends Orm\Model
 {
     // list of properties for this model
     protected static $_properties = array(

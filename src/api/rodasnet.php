@@ -1,14 +1,14 @@
 <?php
 
-namespace Rnblog;
+namespace Rodasnet\Blog\Api;
 
 use Model_Gallery;
 use Orm\Model;
 use Pagination;
-use Rnblog\Model\Category;
-use Rnblog\Model\Post;
+use Rodasnet\Blog\Model\Category;
+use Rodasnet\Blog\Model\Post;
 
-class Rnblog_Rodasnet extends Rnblog_Driver
+class Rodasnet extends Driver
 {
     /**
      * Driver specific functions

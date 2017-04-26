@@ -1,8 +1,8 @@
 <?php
 
-namespace Rnblog\Model;
+namespace Rodasnet\Blog\Model;
 
-class Comment extends \Orm\Model_Soft
+class Comment extends Orm\Model_Soft
 {
 
     protected static $_properties = array(
@@ -64,7 +64,7 @@ class Comment extends \Orm\Model_Soft
     protected static $_belongs_to = array(
         'post' => array(
             'key_from' => 'post_id',
-            'model_to' => '\Rnblog\Model\Post',
+            'model_to' => '\Rodasnet\Blog\Model\Post',
             'key_to' => 'id',
             'cascade_save' => false,
             'cascade_delete' => false,

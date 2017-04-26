@@ -1,7 +1,7 @@
 <?php
-namespace Rnblog\Model;
+namespace Rodasnet\Blog\Model;
 
-class Category extends \Orm\Model_Soft
+class Category extends Orm\Model_Soft
 {
     protected static $_properties = array(
         'id',
@@ -68,7 +68,7 @@ class Category extends \Orm\Model_Soft
     protected static $_has_many = array(
         'posts' => array(
             'key_from' => 'id',
-            'model_to' => '\Rnblog\Model\Post',
+            'model_to' => '\Rodasnet\Blog\Model\Post',
             'key_to' => 'category_id',
             'cascade_save' => false,
             'cascade_delete' => false,  // We delete all post from the category deleted

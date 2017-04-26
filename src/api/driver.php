@@ -1,8 +1,8 @@
 <?php
 
-namespace Rnblog;
+namespace Rodasnet\Blog\Api;
 
-abstract class Rnblog_Driver
+abstract class Driver
 {
 	/**
 	* Driver config

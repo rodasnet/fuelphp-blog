@@ -6,9 +6,9 @@
  * Time: 10:06 PM
  */
 
-namespace Rnblog\Model;
+namespace Rodasnet\Blog\Model;
 
-class Author extends \Orm\Model_Soft
+class Author extends Orm\Model_Soft
 {
     protected static $_properties = array(
         'id',

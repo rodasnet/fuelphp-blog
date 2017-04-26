@@ -1,0 +1,14 @@
+{
+    "name": "rodasnet/fuelphp-blog",
+    "description": "Easily create a blog with featured stories, layouts, assets, categories and more",
+    "require": {
+        "php": "^5.3.3 || ^7.0",
+        "fuel/orm":"1.8.0.1"
+    },
+	"autoload": {
+
+		"psr-4": { "Rodasnet\\Blog\\": "src/" }
+
+	},
+	"minimum-stability": "stable"
+}
