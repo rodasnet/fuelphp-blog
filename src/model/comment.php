@@ -2,7 +2,7 @@
 
 namespace Rodasnet\Blog\Model;
 
-class Comment extends Orm\Model_Soft
+class Comment extends \Orm\Model_Soft
 {
 
     protected static $_properties = array(

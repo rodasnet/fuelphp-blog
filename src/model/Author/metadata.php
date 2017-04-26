@@ -2,7 +2,7 @@
 
 namespace Rodasnet\Blog\Model\Author;
 
-class Metadata extends Orm\Model
+class Metadata extends \Orm\Model
 {
     // list of properties for this model
     protected static $_properties = array(
@@ -16,7 +16,7 @@ class Metadata extends Orm\Model
     protected static $_belongs_to = array(
         'author' => array(
             'key_from' => 'parent_id',
-            'model_to' => '\Rnblog\Model\Author',
+            'model_to' => '\Rodasnet\Blog\Model\Author',
             'key_to' => 'id',
             'cascade_save' => true,
             'cascade_delete' => true,

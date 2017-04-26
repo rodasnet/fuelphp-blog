@@ -2,12 +2,8 @@
 
 namespace Rodasnet\Blog\Model;
 
-class Post extends Orm\Model_Soft
+class Post extends \Orm\Model_Soft
 {
-    public static function _init()
-    {
-        \Module::load('media');
-    }
     protected static $_properties = array(
         'id',
         'name' => array(
@@ -118,7 +114,7 @@ class Post extends Orm\Model_Soft
         ),
         'galleries' => array(
             'key_from' => 'id',
-            'model_to' => '\Media\Model_Gallery',
+            'model_to' => '\Rodasnet\Blog\Model\Gallery',
             'key_to' => 'post_id',
             'cascade_save' => false,
             'cascade_delete' => false,  // We do NOT delete all assests from the gallery deleted

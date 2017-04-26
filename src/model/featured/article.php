@@ -1,7 +1,7 @@
 <?php
 namespace Rodasnet\Blog\Model\Featured;
 
-class Article extends Orm\Model
+class Article extends \Orm\Model
 {
 	protected static $_properties = array(
 		'id',

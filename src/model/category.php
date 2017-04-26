@@ -1,7 +1,7 @@
 <?php
 namespace Rodasnet\Blog\Model;
 
-class Category extends Orm\Model_Soft
+class Category extends \Orm\Model_Soft
 {
     protected static $_properties = array(
         'id',
@@ -27,7 +27,7 @@ class Category extends Orm\Model_Soft
             'form' => array('type' => false),
             'default' => 0,
             'null' => false,
-            // Validation does not  passs in the action_add controller method
+            // Validation does not  pass in the action_add controller method
 //            'validation' => array('is_numeric'),
         ),
         'created_at' => array(

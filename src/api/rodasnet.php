@@ -2,8 +2,8 @@
 
 namespace Rodasnet\Blog\Api;
 
-use Model_Gallery;
-use Orm\Model;
+use Rodasnet\Blog\Model\Gallery;
+use \Orm\Model;
 use Pagination;
 use Rodasnet\Blog\Model\Category;
 use Rodasnet\Blog\Model\Post;
@@ -137,7 +137,7 @@ class Rodasnet extends Driver
     {
         if ($post = Post::query()->where('slug', $article->slug)->get_one())
         {
-            if ($gallery = Model_Gallery::query()->where('post_id', $post->id)->get_one())
+            if ($gallery = Gallery::query()->where('post_id', $post->id)->get_one())
             {
                 $data['url'] = $gallery->asset->uri . '' . $gallery->asset->name;
                 $data['extension'] = $gallery->asset->type;

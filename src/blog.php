@@ -27,7 +27,7 @@ class Blog
 	 */
 	public static function _init()
 	{
-	    \Config::load('blog', true);
+
 	}
 
 	/**
@@ -35,20 +35,24 @@ class Blog
 	 *
 	 * @param	string			$instance		Instance name
 	 * @param	array			$config		Extra config array
-	 * @return  Rnblog instance
+	 * @return  Blog instance
 	 */
-	public static function forge($instance = 'default', $config = array())
+	public static function forge($instance = 'default', $apiDriver = 'default')
 	{
+		$config = file(__DIR__ . '/config/blog.php');
 
-		is_array($config) or $config = array('driver' => $config);
+        $apiDriver == 'default' ? $apiDriver = 'Rodasnet' : $apiDriver;
 
-		$config = \Arr::merge(static::$_defaults, \Config::get('blog', array()), $config);
+        $class = '\Rodasnet\\Blog\\Api\\' . ucfirst(strtolower($apiDriver));
 
-		$class = '\Rodasnet\\Blog\\' . ucfirst(strtolower($config['driver']));
+        if( ! class_exists($class, true))
+        {
+            throw new \FuelException('Could not find Rodasnet\Blog driver: ' . ucfirst(strtolower($apiDriver)));
+        }
 
 		if( ! class_exists($class, true))
 		{
-			throw new \FuelException('Could not find Rnblog driver: ' . ucfirst(strtolower($config['driver'])));
+			throw new \FuelException('Could not find Rnblog driver: ' . ucfirst(strtolower($apiDriver)));
 		}
 
 		$driver = new $class($config);
@@ -62,7 +66,7 @@ class Blog
 	 * Return a specific driver, or the default instance (is created if necessary)
 	 *
 	 * @param   string  $instance
-	 * @return  Rnblog instance
+	 * @return  Blog instance
 	 */
 	public static function instance($instance = null)
 	{
