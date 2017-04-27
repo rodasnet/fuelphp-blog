@@ -11,6 +11,15 @@ use Rodasnet\Blog\Model\Post;
 class Rodasnet extends Driver
 {
     /**
+     * Driver constructor
+     *
+     * @param array $config driver config
+     */
+    public function __construct(array $config = array())
+    {
+        parent::__construct($config);
+    }
+    /**
      * Driver specific functions
      *
      * /
